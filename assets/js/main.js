@@ -42,183 +42,6 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// =========================
-// Enhanced Navbar Mobile Toggle + Overlay
-// =========================
-document.addEventListener("DOMContentLoaded", function () {
-  const navbarToggler = document.querySelector(".navbar-toggler");
-  const navbarCollapse = document.querySelector(".navbar-collapse");
-  let navbarOverlay = document.querySelector(".navbar-overlay");
-
-  // Create overlay if not present
-  if (!navbarOverlay) {
-    navbarOverlay = document.createElement("div");
-    navbarOverlay.className = "navbar-overlay";
-    navbarOverlay.setAttribute("aria-hidden", "true");
-    document.body.appendChild(navbarOverlay);
-  }
-
-  function openMenu() {
-    navbarToggler.setAttribute("aria-expanded", "true");
-    navbarCollapse.classList.add("show");
-    navbarOverlay.classList.add("show");
-    navbarOverlay.setAttribute("aria-hidden", "false");
-    document.body.classList.add("navbar-open");
-    
-    // Focus management
-    const firstLink = navbarCollapse.querySelector(".nav-link");
-    if (firstLink) {
-      setTimeout(() => firstLink.focus(), 100);
-    }
-    
-    // Trap focus within menu
-    trapFocus(navbarCollapse);
-  }
-  
-  function closeMenu() {
-    navbarToggler.setAttribute("aria-expanded", "false");
-    navbarCollapse.classList.remove("show");
-    navbarOverlay.classList.remove("show");
-    navbarOverlay.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("navbar-open");
-    
-    // Return focus to toggler
-    navbarToggler.focus();
-    
-    // Remove focus trap
-    removeFocusTrap();
-  }
-
-  // Focus trap function
-  function trapFocus(element) {
-    const focusableElements = element.querySelectorAll(
-      'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
-    );
-    const firstFocusable = focusableElements[0];
-    const lastFocusable = focusableElements[focusableElements.length - 1];
-
-    element.addEventListener('keydown', function(e) {
-      if (e.key === 'Tab') {
-        if (e.shiftKey) {
-          if (document.activeElement === firstFocusable) {
-            e.preventDefault();
-            lastFocusable.focus();
-          }
-        } else {
-          if (document.activeElement === lastFocusable) {
-            e.preventDefault();
-            firstFocusable.focus();
-          }
-        }
-      }
-      if (e.key === 'Escape') {
-        closeMenu();
-      }
-    });
-  }
-
-  function removeFocusTrap() {
-    // Remove event listeners when menu closes
-    const focusableElements = navbarCollapse.querySelectorAll(
-      'a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select'
-    );
-    focusableElements.forEach(element => {
-      element.removeEventListener('keydown', arguments.callee);
-    });
-  }
-
-  if (navbarToggler && navbarCollapse) {
-    // Toggle menu on button click
-    navbarToggler.addEventListener("click", function (e) {
-      e.preventDefault();
-      const expanded = navbarToggler.getAttribute("aria-expanded") === "true";
-      if (!expanded) {
-        openMenu();
-      } else {
-        closeMenu();
-      }
-    });
-
-    // Close menu when a link is clicked (for better UX)
-    navbarCollapse.querySelectorAll(".nav-link").forEach(link => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
-          closeMenu();
-        }
-      });
-    });
-
-    // Close menu when overlay is clicked
-    navbarOverlay.addEventListener("click", closeMenu);
-
-    // Handle touch events for better mobile experience
-    let touchStartY = 0;
-    let touchEndY = 0;
-
-    navbarCollapse.addEventListener('touchstart', function(e) {
-      touchStartY = e.changedTouches[0].screenY;
-    });
-
-    navbarCollapse.addEventListener('touchend', function(e) {
-      touchEndY = e.changedTouches[0].screenY;
-      handleSwipe();
-    });
-
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      const swipeDistance = touchStartY - touchEndY;
-      
-      // Swipe up to close menu
-      if (swipeDistance > swipeThreshold) {
-        closeMenu();
-      }
-    }
-  }
-
-  // Close menu on resize
-  window.addEventListener("resize", function () {
-    if (window.innerWidth > 768) {
-      closeMenu();
-    }
-  });
-
-  // Remove any existing close buttons to prevent duplicates
-  navbarCollapse.querySelectorAll('.navbar-close-btn').forEach(btn => btn.remove());
-  
-  // Add close button to mobile menu
-  let closeBtn = document.createElement('button');
-  closeBtn.className = 'navbar-close-btn';
-  closeBtn.setAttribute('aria-label', 'Close navigation menu');
-  closeBtn.setAttribute('type', 'button');
-  closeBtn.innerHTML = '&times;';
-  navbarCollapse.insertBefore(closeBtn, navbarCollapse.firstChild);
-  
-  closeBtn.addEventListener('click', closeMenu);
-  closeBtn.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      closeMenu();
-    }
-  });
-
-  // Enhanced accessibility for mobile menu
-  if (navbarCollapse) {
-    navbarCollapse.setAttribute('role', 'navigation');
-    navbarCollapse.setAttribute('aria-label', 'Main navigation');
-    
-    const navLinks = navbarCollapse.querySelectorAll('.nav-link');
-    navLinks.forEach((link, index) => {
-      link.setAttribute('tabindex', '0');
-      link.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          link.click();
-        }
-      });
-    });
-  }
-});
-
 // Counting Animation Script
 document.addEventListener('DOMContentLoaded', function() {
   const statsCard = document.querySelector('.stats-card');
@@ -355,4 +178,99 @@ document.addEventListener('DOMContentLoaded', function() {
       updateCarousel();
     }
   });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Navbar Elements
+  const navbar = document.querySelector('.navbar');
+  const toggleBtn = document.querySelector('.navbar-toggle');
+  const mobileMenu = document.querySelector('.navbar-mobile');
+  const closeBtn = document.querySelector('.mobile-close');
+  const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+  const contactBtns = document.querySelectorAll('.btn-primary');
+  
+  // Toggle Mobile Menu
+  function toggleMobileMenu() {
+    const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    toggleBtn.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = isExpanded ? '' : 'hidden';
+    
+    // Create overlay if it doesn't exist
+    let overlay = document.querySelector('.navbar-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'navbar-overlay';
+      document.body.appendChild(overlay);
+    }
+    overlay.classList.toggle('open');
+    
+    // Focus management
+    if (!isExpanded) {
+      setTimeout(() => {
+        closeBtn.focus();
+      }, 100);
+    }
+  }
+  
+  // Close Mobile Menu
+  function closeMobileMenu() {
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+    
+    const overlay = document.querySelector('.navbar-overlay');
+    if (overlay) overlay.classList.remove('open');
+    
+    toggleBtn.focus();
+  }
+  
+  // Event Listeners
+  toggleBtn.addEventListener('click', toggleMobileMenu);
+  closeBtn.addEventListener('click', closeMobileMenu);
+  
+  // Close menu when clicking on links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+  });
+  
+  contactBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
+    });
+  });
+  
+  // Close menu when clicking on overlay
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('navbar-overlay')) {
+      closeMobileMenu();
+    }
+  });
+  
+  // Close menu with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  });
+  
+  // Add scroll effect
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  
+  // Initialize scroll state
+  if (window.scrollY > 10) {
+    navbar.classList.add('scrolled');
+  }
 });

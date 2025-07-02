@@ -14,153 +14,278 @@
 </head>
 <body>
   <!-- Navbar Start -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="navbar-container">
-      <a href="home.html" class="navbar-logo">
-        <img src="assets/gallery/E-Logo-Black.png" alt="Empiric Logo" class="navbar-logo-img">
-      </a>
-      <button class="navbar-toggler" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarMenu">
+        <span class="hamburger">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </span>
       </button>
-      <div class="navbar-collapse">
-        <ul class="navbar-links">
+      <a href="home.html" class="navbar-brand">
+        <img src="assets/gallery/E-Logo-Black.png" alt="Empiric Logo" class="logo-img" width="150" height="40">
+      </a>
+      <div class="navbar-desktop">
+        <ul class="nav-list">
           <li><a href="home.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link active">About</a></li>
           <li><a href="learnmore.html" class="nav-link">Services</a></li>
           <li><a href="projects.html" class="nav-link">Projects</a></li>
-          <li><a href="team.html" class="nav-link">Team</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="contact.html" class="nav-link contact-link">Contact</a></li>
         </ul>
+        <a href="contact.html" class="btn btn-primary">Contact</a>
+      </div>
+      <div class="navbar-mobile" id="navbarMenu">
+        <div class="mobile-header">
+          <button class="mobile-close" aria-label="Close navigation">&times;</button>
+        </div>
+        <ul class="mobile-nav-list">
+          <li><a href="home.html" class="mobile-link">Home</a></li>
+          <li><a href="about.html" class="mobile-link active">About</a></li>
+          <li><a href="learnmore.html" class="mobile-link">Services</a></li>
+          <li><a href="projects.html" class="mobile-link">Projects</a></li>
+          <li><a href="blog.html" class="mobile-link">Blog</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary mobile-btn">Contact Us</a>
       </div>
     </div>
   </nav>
   <!-- Navbar End -->
 
   <main>
-    <header>
-      <h1>About Us</h1>
-      <p>Empowering Dreams, Building Futures</p>
-    </header>
-
-    <section class="section">
-      <h2>Who We Are</h2>
-      <p>
-        Empiric Real Estate & Building Construction Pvt Ltd is a leading real
-        estate and construction company based in Islamabad, Pakistan. Established
-        in 2023, we specialize in delivering innovative, high-quality construction
-        solutions and real estate services. Our mission is to redefine urban
-        living by creating spaces that inspire, empower, and endure.
-      </p>
+    <!-- Who We Are & Company Story -->
+    <section class="about-section who-we-are">
+      <div class="about-container">
+        <div class="about-text">
+          <h1>Who We Are</h1>
+          <p>Empiric Real Estate & Building Construction Pvt Ltd is more than a construction company—we are a team of dreamers, builders, and innovators. Founded in 2023 in Islamabad, we have quickly become a trusted name in real estate and construction, known for our integrity, quality, and client-first approach. Our journey is driven by a passion for creating spaces that inspire and empower communities.</p>
+          <p>We believe in building not just structures, but lasting relationships and a better future for all. Our philosophy is simple: every project is a promise, and every client is a partner in our shared success.</p>
+        </div>
+        <div class="about-image">
+          <img src="assets/gallery/intro-image.png" alt="Empiric Team at Work">
+        </div>
+      </div>
     </section>
 
-    <section class="section">
-      <h2>Our Mission</h2>
-      <p>
-        Our mission is to provide exceptional real estate and construction
-        services that exceed client expectations. We are committed to delivering
-        projects on time, within budget, and to the highest standards of quality
-        and safety. Through innovation, sustainability, and professionalism, we
-        aim to transform the real estate landscape in Pakistan.
-      </p>
+    <!-- Company Timeline / Milestones -->
+    <section class="about-section timeline">
+      <h2>Our Journey</h2>
+      <div class="timeline-grid">
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">Empiric founded in Islamabad with a vision to redefine real estate and construction.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">First luxury residential project completed, setting a new standard for quality.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-content">Expanded into commercial and sustainable building projects.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-content">Recognized for client satisfaction and innovative design.</div>
+        </div>
+        <!-- Add more milestones as Empiric grows -->
+      </div>
     </section>
 
-    <section class="section">
-      <h2>Our Vision</h2>
-      <p>
-        We envision a future where every individual has access to affordable,
-        sustainable, and luxurious living spaces. By leveraging cutting-edge
-        technology and a customer-centric approach, we strive to become the most
-        trusted name in real estate and construction.
-      </p>
-    </section>
-
-    <section class="section">
+    <!-- Core Values (Expanded) -->
+    <section class="about-section core-values">
       <h2>Our Core Values</h2>
-      <ul>
-        <li>
+      <div class="values-grid">
+        <div class="value-card">
           <i class="fa-solid fa-check-circle"></i>
-          <strong>Integrity:</strong> We operate with honesty, transparency, and
-          accountability in all our dealings.
-        </li>
-        <li>
-          <i class="fa-solid fa-check-circle"></i>
-          <strong>Quality:</strong> We are committed to delivering excellence in
-          every project we undertake.
-        </li>
-        <li>
-          <i class="fa-solid fa-check-circle"></i>
-          <strong>Innovation:</strong> We embrace creativity and technology to
-          provide innovative solutions.
-        </li>
-        <li>
-          <i class="fa-solid fa-check-circle"></i>
-          <strong>Sustainability:</strong> We prioritize eco-friendly practices to
-          build a greener future.
-        </li>
-        <li>
-          <i class="fa-solid fa-check-circle"></i>
-          <strong>Customer Focus:</strong> We put our clients at the heart of
-          everything we do.
-        </li>
+          <h3>Integrity</h3>
+          <p>We operate with honesty and transparency. Every decision is made with our clients' best interests at heart, building trust that lasts beyond project completion.</p>
+        </div>
+        <div class="value-card">
+          <i class="fa-solid fa-gem"></i>
+          <h3>Quality</h3>
+          <p>We never compromise on quality. Our rigorous standards and attention to detail ensure every project is built to last and exceed expectations.</p>
+        </div>
+        <div class="value-card">
+          <i class="fa-solid fa-lightbulb"></i>
+          <h3>Innovation</h3>
+          <p>We embrace new ideas and technologies, always seeking better ways to serve our clients and the environment.</p>
+        </div>
+        <div class="value-card">
+          <i class="fa-solid fa-leaf"></i>
+          <h3>Sustainability</h3>
+          <p>We are committed to eco-friendly practices, using sustainable materials and methods to protect our planet for future generations.</p>
+        </div>
+        <div class="value-card">
+          <i class="fa-solid fa-users"></i>
+          <h3>Customer Focus</h3>
+          <p>Our clients are our partners. We listen, adapt, and deliver solutions tailored to their unique needs and dreams.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Team (Expanded) -->
+    <section class="about-section our-team">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="assets/team/ceo.png" alt="Naveed Iqbal" class="team-image" />
+          <h3 class="team-name">Naveed Iqbal</h3>
+          <p class="team-role">Chief Executive Officer</p>
+          <p class="team-bio">Visionary leader with 15+ years in real estate development. Loves cricket and community service.</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/team/md.png" alt="Engr Sadeeq Akbar" class="team-image" />
+          <h3 class="team-name">Engr Sadeeq Akbar</h3>
+          <p class="team-role">Managing Director</p>
+          <p class="team-bio">Chartered engineer, sustainability advocate, and tech enthusiast. Enjoys hiking and mentoring young engineers.</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/gallery/E-Logo-Black.png" alt="Team Member" class="team-image" />
+          <h3 class="team-name">Ayesha Khan</h3>
+          <p class="team-role">Senior Architect</p>
+          <p class="team-bio">Expert in modern design and green building. Passionate about art and travel.</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/gallery/E-Logo-Black.png" alt="Team Member" class="team-image" />
+          <h3 class="team-name">Ali Raza</h3>
+          <p class="team-role">Project Manager</p>
+          <p class="team-bio">Detail-oriented and client-focused. Loves football and volunteering for local causes.</p>
+        </div>
+        <!-- Add more team members as needed -->
+      </div>
+    </section>
+
+    <!-- Culture & Work Environment -->
+    <section class="about-section culture">
+      <h2>Our Culture</h2>
+      <div class="culture-content">
+        <p>At Empiric, we foster a culture of collaboration, learning, and growth. Our team enjoys a supportive environment where every voice is heard and every idea is valued. We celebrate our successes together and support each other through challenges.</p>
+        <ul class="culture-list">
+          <li><i class="fa-solid fa-mug-hot"></i> Weekly team breakfasts</li>
+          <li><i class="fa-solid fa-users"></i> Open-door leadership</li>
+          <li><i class="fa-solid fa-lightbulb"></i> Innovation workshops</li>
+          <li><i class="fa-solid fa-heart"></i> Community volunteering</li>
+          <li><i class="fa-solid fa-graduation-cap"></i> Ongoing training & development</li>
+        </ul>
+        <div class="culture-gallery">
+          <img src="assets/gallery/project1.jpg" alt="Team Event">
+          <img src="assets/gallery/project2.jpg" alt="Office Life">
+          <img src="assets/gallery/project3.jpg" alt="Community Work">
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Involvement / CSR -->
+    <section class="about-section csr">
+      <h2>Community Involvement</h2>
+      <p>We believe in giving back. Empiric supports local charities, sponsors youth education programs, and participates in environmental clean-up drives. Our commitment to social responsibility is at the heart of our business.</p>
+      <ul class="csr-list">
+        <li><i class="fa-solid fa-seedling"></i> Annual tree plantation drives</li>
+        <li><i class="fa-solid fa-school"></i> Scholarships for underprivileged students</li>
+        <li><i class="fa-solid fa-hands-helping"></i> Disaster relief and community support</li>
       </ul>
     </section>
 
-    <section class="section">
-      <h2>Our Services</h2>
-      <ul>
-        <li>
-          <i class="fa-solid fa-building"></i>
-          <strong>Property Buy & Selling:</strong> Expert assistance in buying and
-          selling residential and commercial properties.
-        </li>
-        <li>
-          <i class="fa-solid fa-hammer"></i>
-          <strong>Construction Services:</strong> High-quality construction of
-          residential, commercial, and infrastructure projects.
-        </li>
-        <li>
-          <i class="fa-solid fa-drafting-compass"></i>
-          <strong>Architecture Services:</strong> Innovative and sustainable
-          architectural designs tailored to your needs.
-        </li>
-      </ul>
+    <!-- Careers / Join Us -->
+    <section class="about-section careers">
+      <h2>Careers at Empiric</h2>
+      <p>Want to join a team that values innovation, growth, and making a difference? We're always looking for talented, passionate individuals to join us. Whether you're an experienced professional or just starting your career, Empiric offers opportunities to learn, grow, and make an impact.</p>
+      <a href="contact.html" class="btn btn-primary">Join Our Team</a>
     </section>
 
-    <section class="section">
-      <h2>Our Leadership</h2>
-      <p>
-        Our team of visionary leaders drives Empiric towards excellence. Each
-        member brings unique expertise and a commitment to delivering innovative
-        solutions in real estate and construction.
-      </p>
-      <ul>
-        <li>
-          <i class="fa-solid fa-user-tie"></i>
-          <strong>Naveed Iqbal (CEO):</strong> A visionary leader with years of
-          experience in real estate development and project management.
-        </li>
-        <li>
-          <i class="fa-solid fa-user-tie"></i>
-          <strong>Engr Sadeeq Akbar (Managing Director):</strong> A seasoned
-          engineer with a passion for innovation and quality.
-        </li>
-      </ul>
+    <!-- Unique Call to Action -->
+    <section class="about-section about-cta">
+      <h2>Let's Build the Future Together</h2>
+      <p>Contact Empiric today to discover how we can help you achieve your real estate and construction goals with integrity, quality, and innovation.</p>
+      <a href="contact.html" class="btn btn-primary">Contact Us</a>
     </section>
-
-    <a href="home.html" class="btn-back">Back to Home</a>
   </main>
 
   <!-- Footer Start -->
   <footer class="footer">
     <div class="footer-container">
-      <p>&copy; 2024 Empiric Real Estate & Building Construction Pvt Ltd. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="term.html">Terms of Service</a>
+      <div class="footer-section company-info">
+        <div class="footer-logo">
+          <img src="assets/gallery/E-Logo-White.png" alt="Empiric Logo" class="logo-img">
+        </div>
+        <h3 class="company-name">Empiric Real Estate & Building Construction Pvt Ltd</h3>
+        <p class="company-description">Innovative, high-quality construction and real estate solutions in Islamabad and beyond. Building your dreams with trust, quality, and expertise.</p>
+        <div class="newsletter">
+          <h4>Subscribe to Newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="btn-subscribe">Subscribe</button>
+          </form>
+        </div>
       </div>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/profile.php?id=100020781544547" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <div class="footer-section quick-links">
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-menu">
+          <li><a href="home.html" class="footer-link">Home</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="learnmore.html" class="footer-link">Our Services</a></li>
+          <li><a href="projects.html" class="footer-link">Projects</a></li>
+          <li><a href="team.html" class="footer-link">Our Team</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact-info">
+        <h4 class="footer-title">Contact Us</h4>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:jnaveediqbal@gmail.com">jnaveediqbal@gmail.com</a>
+          </li>
+          <li class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+923177143602">+92 317 714 3602</a>
+          </li>
+          <li class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+923327372711">+92 332 737 2711</a>
+          </li>
+          <li class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>House#102C MR-9 Block B-1 B-17 Islamabad</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section social-media">
+        <h4 class="footer-title">Follow Us</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=100020781544547" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        <div class="business-hours">
+          <h5>Business Hours</h5>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="copyright">&copy; 2024 Empiric Real Estate & Building Construction Pvt Ltd. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
       </div>
     </div>
   </footer>

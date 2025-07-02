@@ -14,24 +14,40 @@
 </head>
 <body>
   <!-- Navbar Start -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main navigation">
     <div class="navbar-container">
-      <a href="home.html" class="navbar-logo">
-        <img src="assets/gallery/E-Logo-Black.png" alt="Empiric Logo" class="navbar-logo-img">
-      </a>
-      <button class="navbar-toggler" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarMenu">
+        <span class="hamburger">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </span>
       </button>
-      <div class="navbar-collapse">
-        <ul class="navbar-links">
+      <a href="home.html" class="navbar-brand">
+        <img src="assets/gallery/E-Logo-Black.png" alt="Empiric Logo" class="logo-img" width="150" height="40">
+      </a>
+      <div class="navbar-desktop">
+        <ul class="nav-list">
           <li><a href="home.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="learnmore.html" class="nav-link">Services</a></li>
           <li><a href="projects.html" class="nav-link">Projects</a></li>
-          <li><a href="team.html" class="nav-link">Team</a></li>
           <li><a href="blog.html" class="nav-link active">Blog</a></li>
-          <li><a href="contact.html" class="nav-link contact-link">Contact</a></li>
         </ul>
+        <a href="contact.html" class="btn btn-primary">Contact</a>
+      </div>
+      <div class="navbar-mobile" id="navbarMenu">
+        <div class="mobile-header">
+          <button class="mobile-close" aria-label="Close navigation">&times;</button>
+        </div>
+        <ul class="mobile-nav-list">
+          <li><a href="home.html" class="mobile-link">Home</a></li>
+          <li><a href="about.html" class="mobile-link">About</a></li>
+          <li><a href="learnmore.html" class="mobile-link">Services</a></li>
+          <li><a href="projects.html" class="mobile-link">Projects</a></li>
+          <li><a href="blog.html" class="mobile-link active">Blog</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary mobile-btn">Contact Us</a>
       </div>
     </div>
   </nav>
@@ -52,14 +68,87 @@
   <!-- Footer Start -->
   <footer class="footer">
     <div class="footer-container">
-      <p>&copy; 2024 Empiric Real Estate & Building Construction Pvt Ltd. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="privacy.html">Privacy Policy</a> |
-        <a href="term.html">Terms of Service</a> |
-        <a href="blog.html">Blog</a>
+      <div class="footer-section company-info">
+        <div class="footer-logo">
+          <img src="assets/gallery/E-Logo-White.png" alt="Empiric Logo" class="logo-img">
+        </div>
+        <h3 class="company-name">Empiric Real Estate & Building Construction Pvt Ltd</h3>
+        <p class="company-description">Innovative, high-quality construction and real estate solutions in Islamabad and beyond. Building your dreams with trust, quality, and expertise.</p>
+        <div class="newsletter">
+          <h4>Subscribe to Newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="btn-subscribe">Subscribe</button>
+          </form>
+        </div>
       </div>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/profile.php?id=100020781544547" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <div class="footer-section quick-links">
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-menu">
+          <li><a href="home.html" class="footer-link">Home</a></li>
+          <li><a href="about.html" class="footer-link">About Us</a></li>
+          <li><a href="learnmore.html" class="footer-link">Our Services</a></li>
+          <li><a href="projects.html" class="footer-link">Projects</a></li>
+          <li><a href="team.html" class="footer-link">Our Team</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact-info">
+        <h4 class="footer-title">Contact Us</h4>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:jnaveediqbal@gmail.com">jnaveediqbal@gmail.com</a>
+          </li>
+          <li class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+923177143602">+92 317 714 3602</a>
+          </li>
+          <li class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+923327372711">+92 332 737 2711</a>
+          </li>
+          <li class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>House#102C MR-9 Block B-1 B-17 Islamabad</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-section social-media">
+        <h4 class="footer-title">Follow Us</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=100020781544547" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+        <div class="business-hours">
+          <h5>Business Hours</h5>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="copyright">&copy; 2024 Empiric Real Estate & Building Construction Pvt Ltd. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
       </div>
     </div>
   </footer>
