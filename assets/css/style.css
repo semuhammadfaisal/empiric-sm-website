@@ -12280,3 +12280,429 @@ img, .emp-project-image, .emp-client-logo {
     padding: 0.5rem 1rem;
   }
 }
+
+/* =========================
+   We Deal In Section Styles
+   ========================= */
+.we-deal-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--bg-light) 0%, #f8f9fa 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.we-deal-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23e9ecef" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.we-deal-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.we-deal-container .section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.we-deal-container .section-subtitle {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-accent-light) 100%);
+  color: var(--color-white);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(244, 163, 0, 0.3);
+}
+
+.we-deal-container .section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--text-heading) 0%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.we-deal-container .section-description {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.sector-card {
+  background: var(--color-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  border: 1px solid rgba(244, 163, 0, 0.1);
+}
+
+.sector-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-gold);
+}
+
+.sector-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-accent-light) 100%);
+  z-index: 1;
+}
+
+.sector-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.sector-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.sector-card:hover .sector-image img {
+  transform: scale(1.1);
+}
+
+.sector-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.sector-status {
+  background: rgba(244, 163, 0, 0.9);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+}
+
+.sector-content {
+  padding: 2rem;
+}
+
+.sector-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.sector-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.sector-location i {
+  color: var(--color-gold);
+  font-size: 1rem;
+}
+
+.sector-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.detail-item h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: 1px;
+}
+
+.detail-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detail-item li {
+  padding: 0.25rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-item li i {
+  color: var(--color-gold);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.sector-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.feature-tag {
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-accent-light) 100%);
+  color: var(--color-white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(244, 163, 0, 0.3);
+}
+
+.we-deal-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.we-deal-cta .btn {
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-accent-light) 100%);
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(244, 163, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.we-deal-cta .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(244, 163, 0, 0.4);
+  background: linear-gradient(135deg, var(--color-black) 0%, var(--color-gray-800) 100%);
+}
+
+.we-deal-cta .btn svg {
+  transition: transform 0.3s ease;
+}
+
+.we-deal-cta .btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Responsive Design for We Deal In Section */
+@media (max-width: 1200px) {
+  .sectors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .we-deal-container .section-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .we-deal-section {
+    padding: 4rem 0;
+  }
+  
+  .sectors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .we-deal-container .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .we-deal-container .section-description {
+    font-size: 1.1rem;
+  }
+  
+  .sector-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .we-deal-container {
+    padding: 0 1.5rem;
+  }
+  
+  .we-deal-container .section-title {
+    font-size: 2rem;
+  }
+  
+  .we-deal-container .section-description {
+    font-size: 1rem;
+  }
+  
+  .sectors-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .sector-card {
+    border-radius: 15px;
+  }
+  
+  .sector-content {
+    padding: 1.5rem;
+  }
+  
+  .sector-name {
+    font-size: 1.5rem;
+  }
+  
+  .sector-image {
+    height: 200px;
+  }
+  
+  .we-deal-cta .btn {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .we-deal-section {
+    padding: 3rem 0;
+  }
+  
+  .we-deal-container {
+    padding: 0 1rem;
+  }
+  
+  .we-deal-container .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .we-deal-container .section-subtitle {
+    font-size: 0.8rem;
+    padding: 0.4rem 1.2rem;
+  }
+  
+  .sector-content {
+    padding: 1.25rem;
+  }
+  
+  .sector-name {
+    font-size: 1.25rem;
+  }
+  
+  .sector-image {
+    height: 180px;
+  }
+  
+  .detail-item h4 {
+    font-size: 1rem;
+  }
+  
+  .detail-item li {
+    font-size: 0.85rem;
+  }
+  
+  .feature-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .we-deal-cta .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .we-deal-container .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .sector-content {
+    padding: 1rem;
+  }
+  
+  .sector-name {
+    font-size: 1.1rem;
+  }
+  
+  .sector-image {
+    height: 160px;
+  }
+  
+  .we-deal-cta .btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+  }
+}
