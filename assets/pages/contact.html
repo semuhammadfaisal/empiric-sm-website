@@ -23,12 +23,12 @@
           <span class="hamburger-line"></span>
         </span>
       </button>
-      <a href="../home.html" class="navbar-brand">
+      <a href="../../home.html" class="navbar-brand">
         <img src="../gallery/E-Logo-Black.png" alt="Empiric Logo" class="logo-img" width="150" height="40">
       </a>
       <div class="navbar-desktop">
         <ul class="nav-list">
-          <li><a href="../home.html" class="nav-link">Home</a></li>
+          <li><a href="../../home.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="learnmore.html" class="nav-link">Services</a></li>
           <li><a href="projects.html" class="nav-link">Projects</a></li>
@@ -52,47 +52,401 @@
   <!-- Navbar End -->
 
   <main>
-    <header>
-      <a href="../home.html" class="back-to-home">Back to Home</a>
-      <h1>Contact Us</h1>
-    </header>
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="contact-hero-container">
+        <div class="contact-hero-content">
+          <div class="contact-hero-badge">
+            <i class="fas fa-envelope"></i>
+            <span>Get In Touch</span>
+          </div>
+          <h1 class="contact-hero-title">Let's Build Your Dreams Together</h1>
+          <p class="contact-hero-description">
+            Ready to start your real estate journey? Our expert team is here to help you find the perfect property 
+            or bring your construction vision to life. Contact us today for personalized assistance.
+          </p>
+          <div class="contact-hero-actions">
+            <a href="tel:+923177143602" class="btn btn-primary">
+              <i class="fas fa-phone"></i>
+              <span>Call Now</span>
+            </a>
+            <a href="#contact-form" class="btn btn-outline">
+              <i class="fas fa-envelope"></i>
+              <span>Send Message</span>
+            </a>
+          </div>
+        </div>
+        <div class="contact-hero-image">
+          <img src="../gallery/intro-image.png" alt="Contact Empiric Real Estate" loading="lazy">
+        </div>
+      </div>
+    </section>
 
-    <section>
-      <div class="contact-container">
-        <!-- Contact Information Section -->
-        <div class="contact-info">
-          <h2>Our Contact Information</h2>
-          <p>
-            <strong>Sadeeq Akbar (Managing Director)</strong><br />
-            Contact: 0332 737 2711 - 0344 950 6863<br />
-            Email:
-            <a href="mailto:akbarsadeeq@yahoo.com">akbarsadeeq@yahoo.com</a>
-          </p>
-          <p>
-            <strong>Naveed Iqbal (CEO)</strong><br />
-            Contact: 0317 714 3602 - 0334 714 3602<br />
-            Email:
-            <a href="mailto:jnaveediqbal@gmail.com">jnaveediqbal@gmail.com</a>
-          </p>
-          <p>
-            <strong>Office Location:</strong><br />
-            House#102C MR-9 Block B-1 B-17 Islamabad.
+    <!-- Contact Information Cards -->
+    <section class="contact-info-section">
+      <div class="contact-info-container">
+        <div class="section-header">
+          <span class="section-subtitle">Contact Information</span>
+          <h2 class="section-title">Get In Touch With Our Team</h2>
+          <div class="divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon"><i class="fas fa-phone"></i></span>
+            <span class="divider-line"></span>
+          </div>
+          <p class="section-description">
+            Reach out to our experienced team for personalized assistance with your real estate and construction needs.
           </p>
         </div>
 
-        <!-- Contact Form Section -->
-        <form action="/contact" method="POST">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+        <div class="contact-cards-grid">
+          <!-- CEO Card -->
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <div class="contact-avatar">
+                <img src="../team/ceo.png" alt="Naveed Iqbal, CEO" loading="lazy">
+              </div>
+              <div class="contact-badge">CEO</div>
+            </div>
+            <div class="contact-card-content">
+              <h3 class="contact-name">Naveed Iqbal</h3>
+              <p class="contact-title">Chief Executive Officer</p>
+              <div class="contact-details">
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <div class="contact-info">
+                    <span class="contact-label">Primary</span>
+                    <a href="tel:+923177143602">+92 317 714 3602</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <div class="contact-info">
+                    <span class="contact-label">Secondary</span>
+                    <a href="tel:+923347143602">+92 334 714 3602</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div class="contact-info">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:jnaveediqbal@gmail.com">jnaveediqbal@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          <!-- Managing Director Card -->
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <div class="contact-avatar">
+                <img src="../team/md.png" alt="Engr Sadeeq Akbar, Managing Director" loading="lazy">
+              </div>
+              <div class="contact-badge">MD</div>
+            </div>
+            <div class="contact-card-content">
+              <h3 class="contact-name">Engr Sadeeq Akbar</h3>
+              <p class="contact-title">Managing Director</p>
+              <div class="contact-details">
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <div class="contact-info">
+                    <span class="contact-label">Primary</span>
+                    <a href="tel:+923327372711">+92 332 737 2711</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <div class="contact-info">
+                    <span class="contact-label">Secondary</span>
+                    <a href="tel:+923449506863">+92 344 950 6863</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div class="contact-info">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:akbarsadeeq@yahoo.com">akbarsadeeq@yahoo.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+          <!-- Office Location Card -->
+          <div class="contact-card office-card">
+            <div class="contact-card-header">
+              <div class="contact-avatar office-avatar">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="contact-badge">Office</div>
+            </div>
+            <div class="contact-card-content">
+              <h3 class="contact-name">Main Office</h3>
+              <p class="contact-title">Empiric Real Estate & Construction</p>
+              <div class="contact-details">
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div class="contact-info">
+                    <span class="contact-label">Address</span>
+                    <span>House#102C MR-9 Block B-1 B-17 Islamabad</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-clock"></i>
+                  <div class="contact-info">
+                    <span class="contact-label">Business Hours</span>
+                    <span>Mon-Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <i class="fas fa-globe"></i>
+                  <div class="contact-info">
+                    <span class="contact-label">Location</span>
+                    <span>Islamabad Capital Territory, Pakistan</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <button type="submit">Send Message</button>
-        </form>
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" id="contact-form">
+      <div class="contact-form-container">
+        <div class="contact-form-content">
+          <div class="form-header">
+            <span class="form-badge">
+              <i class="fas fa-paper-plane"></i>
+              <span>Send Message</span>
+            </span>
+            <h2>Get Your Free Consultation</h2>
+            <p>
+              Fill out the form below and our team will get back to you within 24 hours. 
+              We're here to help you with all your real estate and construction needs.
+            </p>
+          </div>
+
+          <form class="contact-form" action="/contact" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">
+                  <i class="fas fa-user"></i>
+                  Full Name
+                </label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">
+                  <i class="fas fa-envelope"></i>
+                  Email Address
+                </label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">
+                  <i class="fas fa-phone"></i>
+                  Phone Number
+                </label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+              </div>
+              <div class="form-group">
+                <label for="service">
+                  <i class="fas fa-cogs"></i>
+                  Service Required
+                </label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="property-buying">Property Buying</option>
+                  <option value="property-selling">Property Selling</option>
+                  <option value="construction">Construction Services</option>
+                  <option value="architecture">Architecture Services</option>
+                  <option value="consultation">General Consultation</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">
+                <i class="fas fa-tag"></i>
+                Subject
+              </label>
+              <input type="text" id="subject" name="subject" placeholder="Brief description of your inquiry" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">
+                <i class="fas fa-comment"></i>
+                Message
+              </label>
+              <textarea id="message" name="message" rows="6" placeholder="Tell us about your project or requirements..." required></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="newsletter" id="newsletter">
+                <span class="checkmark"></span>
+                Subscribe to our newsletter for updates and offers
+              </label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="contact-form-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>Our team is available round the clock to assist you with any queries or emergencies.</p>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Secure & Private</h3>
+            <p>Your information is protected with industry-standard security measures.</p>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Quick Response</h3>
+            <p>We typically respond to all inquiries within 24 hours during business days.</p>
+          </div>
+
+          <div class="sidebar-card">
+            <div class="sidebar-icon">
+              <i class="fas fa-gift"></i>
+            </div>
+            <h3>Free Consultation</h3>
+            <p>Get expert advice and consultation at no cost. No obligations, just professional guidance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <div class="map-container">
+        <div class="map-content">
+          <div class="map-header">
+            <h2>Visit Our Office</h2>
+            <p>Located in the heart of Islamabad, our office is easily accessible and ready to welcome you.</p>
+          </div>
+          <div class="map-info">
+            <div class="map-detail">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Office Address</h4>
+                <p>House#102C MR-9 Block B-1 B-17 Islamabad</p>
+              </div>
+            </div>
+            <div class="map-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Business Hours</h4>
+                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM</p>
+              </div>
+            </div>
+            <div class="map-detail">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Call Us</h4>
+                <p>+92 317 714 3602<br>+92 332 737 2711</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.1234567890123!2d73.12345678901234!3d33.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDA3JzM0LjQiTiA3M8KwMDcnMzQuNCJF!5e0!3m2!1sen!2spk!4v1234567890123"
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq-section">
+      <div class="contact-faq-container">
+        <div class="section-header">
+          <span class="section-subtitle">FAQ</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="divider">
+            <span class="divider-line"></span>
+            <span class="divider-icon"><i class="fas fa-question-circle"></i></span>
+            <span class="divider-line"></span>
+          </div>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How quickly will you respond to my inquiry?</h3>
+              <div class="faq-toggle">
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, you can call us directly for immediate assistance.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you offer free consultations?</h3>
+              <div class="faq-toggle">
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we offer free initial consultations to understand your needs and provide expert guidance without any obligations.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What areas do you serve?</h3>
+              <div class="faq-toggle">
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <p>We primarily serve Islamabad and surrounding areas, including all major sectors like B-17, DHA, Bahria Town, and other premium locations.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I schedule an appointment outside business hours?</h3>
+              <div class="faq-toggle">
+                <i class="fas fa-plus"></i>
+              </div>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we can arrange appointments outside regular business hours for your convenience. Contact us to schedule a suitable time.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -102,7 +456,7 @@
     <div class="footer-container">
       <div class="footer-section company-info">
         <div class="footer-logo">
-          <img src="../assets/gallery/E-Logo-White.png" alt="Empiric Logo" class="logo-img">
+          <img src="../gallery/E-Logo-White.png" alt="Empiric Logo" class="logo-img">
         </div>
         <h3 class="company-name">Empiric Real Estate & Building Construction Pvt Ltd</h3>
         <p class="company-description">Innovative, high-quality construction and real estate solutions in Islamabad and beyond. Building your dreams with trust, quality, and expertise.</p>
@@ -184,6 +538,6 @@
   </footer>
   <!-- Footer End -->
 
-  <script src="../assets/js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
