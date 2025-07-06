@@ -196,8 +196,75 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenu.classList.toggle('open');
     document.body.style.overflow = isExpanded ? '' : 'hidden';
     
-    // Create overlay if it doesn't exist
-    let overlay = document.querySelector('.navbar-overlay');
+      // Create overlay if it doesn't exist
+  let overlay = document.querySelector('.navbar-overlay');
+  
+  // Privacy Page Navigation Functionality
+  if (window.location.pathname.includes('privacy.html')) {
+    const navLinks = document.querySelectorAll('.privacy-nav-link');
+    const sections = document.querySelectorAll('.privacy-content-block');
+    
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+          const offsetTop = targetSection.offsetTop - 100; // Account for navbar
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Active navigation highlighting
+    function updateActiveNav() {
+      const scrollPosition = window.scrollY + 150; // Offset for better detection
+      
+      sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          navLinks[index].classList.add('active');
+        }
+      });
+    }
+    
+    // Update active nav on scroll
+    window.addEventListener('scroll', updateActiveNav);
+    
+    // Initial active state
+    updateActiveNav();
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe privacy sections for animations
+    sections.forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(30px)';
+      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(section);
+    });
+  }
     if (!overlay) {
       overlay = document.createElement('div');
       overlay.className = 'navbar-overlay';
@@ -364,4 +431,75 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+});
+
+// Privacy page functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.privacy-nav-link');
+  const contentBlocks = document.querySelectorAll('.privacy-content-block');
+  
+  if (navLinks.length === 0 || contentBlocks.length === 0) {
+    return; // Not on privacy page
+  }
+  
+  // Smooth scrolling for navigation links
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+  
+  // Active navigation highlighting
+  function updateActiveNav() {
+    const scrollPosition = window.scrollY + 150;
+    
+    contentBlocks.forEach((block, index) => {
+      const blockTop = block.offsetTop;
+      const blockBottom = blockTop + block.offsetHeight;
+      
+      if (scrollPosition >= blockTop && scrollPosition < blockBottom) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        if (navLinks[index]) {
+          navLinks[index].classList.add('active');
+        }
+      }
+    });
+  }
+  
+  // Scroll-triggered animations
+  function animateOnScroll() {
+    contentBlocks.forEach(block => {
+      const blockTop = block.getBoundingClientRect().top;
+      const blockVisible = 150;
+      
+      if (blockTop < window.innerHeight - blockVisible) {
+        block.style.opacity = '1';
+        block.style.transform = 'translateY(0)';
+      }
+    });
+  }
+  
+  // Event listeners
+  window.addEventListener('scroll', () => {
+    updateActiveNav();
+    animateOnScroll();
+  });
+  
+  // Initial call
+  updateActiveNav();
+  animateOnScroll();
+  
+  // Initialize animations on page load
+  setTimeout(() => {
+    animateOnScroll();
+  }, 100);
 });
