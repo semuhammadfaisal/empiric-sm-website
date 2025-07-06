@@ -1,3 +1,13 @@
+/* FAQ Section Animation */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  transition: max-height 0.6s cubic-bezier(0.4,0,0.2,1);
+}
 :root {
   /* Primary Colors */
   --color-black: #000000;
@@ -6474,7 +6484,9 @@ main a:hover {
   box-shadow: var(--shadow-medium);
 }
 
+
 .faq-question {
+  width: 100%;
   padding: 2rem;
   cursor: pointer;
   display: flex;
@@ -6482,6 +6494,65 @@ main a:hover {
   justify-content: space-between;
   transition: all 0.3s ease;
   background: var(--color-white);
+  border: none;
+  outline: none;
+  font-size: 1.15rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--text-heading);
+  border-radius: 0;
+  text-align: left;
+  gap: 1.5rem;
+}
+
+.faq-question:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+  background: var(--bg-light);
+}
+
+.faq-q-icon {
+  margin-right: 1rem;
+  color: var(--color-gold);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.faq-q-text {
+  flex: 1;
+  text-align: left;
+}
+
+.faq-toggle {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: var(--color-gold);
+  border-radius: 50%;
+  color: var(--color-white);
+  font-size: 1.1rem;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.faq-item.active .faq-toggle {
+  background: var(--color-gold-dark);
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+  background: var(--bg-light);
+  padding: 0 2rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 1.5rem 2rem 2rem;
 }
 
 .faq-question:hover {

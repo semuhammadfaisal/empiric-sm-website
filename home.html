@@ -7,11 +7,134 @@
   <title>Empiric Real Estate & Construction</title>
   <link rel="icon" href="assets/gallery/E-Logo-Black.png" type="image/png">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Home Page FAQ Section Styles (Inline, highest priority) */
+    .faq-section .home-faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .faq-section .home-faq-item {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: box-shadow 0.3s;
+      overflow: hidden;
+      border: 1px solid #ececec;
+    }
+    .faq-section .home-faq-item.active {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      border-color: #e0b200;
+    }
+    .faq-section .home-faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #222;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-radius: 1rem 1rem 0 0;
+    }
+    .faq-section .home-faq-question:focus {
+      background: #fffbe6;
+      outline: 2px solid #e0b200;
+      z-index: 2;
+    }
+    .faq-section .home-faq-q-icon {
+      color: #e0b200;
+      margin-right: 1rem;
+      font-size: 1.3em;
+    }
+    .faq-section .home-faq-q-text {
+      flex: 1;
+      text-align: left;
+    }
+    .faq-section .home-faq-toggle {
+      margin-left: 1rem;
+      color: #e0b200;
+      font-size: 1.2em;
+      transition: transform 0.3s;
+    }
+    .faq-section .home-faq-item.active .home-faq-toggle {
+      color: #b38a00;
+      transform: rotate(180deg);
+    }
+    .faq-section .home-faq-answer {
+      max-height: 0 !important;
+      overflow: hidden;
+      background: #fcfcfc;
+      color: #444;
+      padding: 0 1.5rem !important;
+      font-size: 1rem;
+      line-height: 1.7;
+      border-top: 1px solid #f2e9c9;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+    }
+    .faq-section .home-faq-item.active .home-faq-answer {
+      padding: 1rem 1.5rem 1.5rem 1.5rem !important;
+      max-height: 500px !important;
+      transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+    }
+    .faq-section .home-faq-answer ul {
+      margin: 0.5em 0 0.5em 1.5em;
+      padding: 0;
+      list-style: disc;
+    }
+    .faq-section .home-faq-answer li {
+      margin-bottom: 0.3em;
+    }
+    .faq-section .home-faq-answer p {
+      margin: 0.5em 0;
+    }
+    @media (max-width: 600px) {
+      .faq-section .home-faq-question, .faq-section .home-faq-answer {
+        font-size: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .faq-section .home-faq-grid {
+        gap: 1rem;
+      }
+    }
+    /* End Home Page FAQ Section Styles */
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<!-- Inline Home FAQ Styles: Highest Priority -->
+<style>
+/* Home FAQ Styles (Isolated, High Specificity, !important) */
+.home-faq-grid { display: flex !important; flex-direction: column !important; gap: 1.5rem !important; margin-top: 2rem !important; }
+.home-faq-item { background: #fff !important; border-radius: 1rem !important; box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06) !important; overflow: hidden !important; transition: box-shadow 0.3s !important; border: 1px solid #ececec !important; }
+.home-faq-item.active { box-shadow: 0 4px 24px 0 rgba(0,0,0,0.12) !important; border-color: #e0b200 !important; }
+.home-faq-question { width: 100% !important; background: none !important; border: none !important; outline: none !important; display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 1.25rem 1.5rem !important; font-size: 1.15rem !important; font-weight: 600 !important; color: #222 !important; cursor: pointer !important; transition: background 0.2s !important; border-radius: 1rem !important; }
+.home-faq-item.active .home-faq-question { color: #e0b200 !important; background: #fffbe6 !important; }
+.home-faq-q-icon { margin-right: 1rem !important; color: #e0b200 !important; font-size: 1.3em !important; }
+.home-faq-toggle { margin-left: 1rem !important; transition: transform 0.3s !important; color: #888 !important; font-size: 1.2em !important; }
+.home-faq-item.active .home-faq-toggle { color: #e0b200 !important; }
+.home-faq-answer { max-height: 0 !important; overflow: hidden !important; background: #faf9f6 !important; color: #444 !important; padding: 0 1.5rem !important; font-size: 1rem !important; line-height: 1.7 !important; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s !important; border-top: 1px solid #f3e9c7 !important; }
+.home-faq-item.active .home-faq-answer { max-height: 500px !important; padding: 1.25rem 1.5rem !important; transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), padding 0.3s !important; }
+.home-faq-answer ul { margin: 0.5em 0 0.5em 1.5em !important; padding: 0 !important; }
+.home-faq-answer li { margin-bottom: 0.3em !important; list-style: disc !important; }
+.home-faq-question:focus { outline: 2px solid #e0b200 !important; outline-offset: 2px !important; background: #fffbe6 !important; }
+.home-faq-question[aria-expanded="true"] .home-faq-toggle i { transform: rotate(180deg) !important; }
+@media (max-width: 600px) {
+  .home-faq-question { font-size: 1rem !important; padding: 1rem 1.1rem !important; }
+  .home-faq-answer { font-size: 0.97rem !important; padding: 0 1.1rem !important; }
+  .home-faq-item.active .home-faq-answer { padding: 1rem 1.1rem !important; }
+}
+</style>
 </head>
 <body>
   
@@ -1802,19 +1925,16 @@
           </p>
         </div>
         
-        <div class="faq-grid">
-          <!-- FAQ 1 -->
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>What services do you offer?</h3>
-              <div class="faq-toggle">
-                <i class="fas fa-plus"></i>
-              </div>
-            </div>
-            <div class="faq-answer">
-              <p>
-                We offer comprehensive real estate and construction services including:
-              </p>
+        <div class="home-faq-grid">
+          <!-- Home FAQ 1 -->
+          <div class="home-faq-item">
+            <button type="button" class="home-faq-question" aria-expanded="false" tabindex="0">
+              <span class="home-faq-q-icon"><i class="fas fa-question-circle"></i></span>
+              <span class="home-faq-q-text">What services do you offer?</span>
+              <span class="home-faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="home-faq-answer" aria-hidden="true">
+              <p>We offer comprehensive real estate and construction services including:</p>
               <ul>
                 <li>Property buying and selling assistance</li>
                 <li>Residential and commercial construction</li>
@@ -1824,19 +1944,15 @@
               </ul>
             </div>
           </div>
-
-          <!-- FAQ 2 -->
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>How can I get a quote for my project?</h3>
-              <div class="faq-toggle">
-                <i class="fas fa-plus"></i>
-              </div>
-            </div>
-            <div class="faq-answer">
-              <p>
-                Getting a quote is easy! You can:
-              </p>
+          <!-- Home FAQ 2 -->
+          <div class="home-faq-item">
+            <button type="button" class="home-faq-question" aria-expanded="false" tabindex="0">
+              <span class="home-faq-q-icon"><i class="fas fa-question-circle"></i></span>
+              <span class="home-faq-q-text">How can I get a quote for my project?</span>
+              <span class="home-faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="home-faq-answer" aria-hidden="true">
+              <p>Getting a quote is easy! You can:</p>
               <ul>
                 <li>Contact us via phone for immediate assistance</li>
                 <li>Fill out our online consultation form</li>
@@ -1846,19 +1962,15 @@
               <p>We provide free, no-obligation quotes tailored to your specific needs.</p>
             </div>
           </div>
-
-          <!-- FAQ 3 -->
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>Do you handle legal paperwork and documentation?</h3>
-              <div class="faq-toggle">
-                <i class="fas fa-plus"></i>
-              </div>
-            </div>
-            <div class="faq-answer">
-              <p>
-                Yes, we provide comprehensive legal support including:
-              </p>
+          <!-- Home FAQ 3 -->
+          <div class="home-faq-item">
+            <button type="button" class="home-faq-question" aria-expanded="false" tabindex="0">
+              <span class="home-faq-q-icon"><i class="fas fa-question-circle"></i></span>
+              <span class="home-faq-q-text">Do you handle legal paperwork and documentation?</span>
+              <span class="home-faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="home-faq-answer" aria-hidden="true">
+              <p>Yes, we provide comprehensive legal support including:</p>
               <ul>
                 <li>Property title verification</li>
                 <li>Document preparation and filing</li>
@@ -1869,19 +1981,15 @@
               <p>Our legal team ensures all documentation is properly handled for your peace of mind.</p>
             </div>
           </div>
-
-          <!-- FAQ 4 -->
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>Are your projects eco-friendly and sustainable?</h3>
-              <div class="faq-toggle">
-                <i class="fas fa-plus"></i>
-              </div>
-            </div>
-            <div class="faq-answer">
-              <p>
-                Absolutely! We are committed to sustainable construction practices:
-              </p>
+          <!-- Home FAQ 4 -->
+          <div class="home-faq-item">
+            <button type="button" class="home-faq-question" aria-expanded="false" tabindex="0">
+              <span class="home-faq-q-icon"><i class="fas fa-question-circle"></i></span>
+              <span class="home-faq-q-text">Are your projects eco-friendly and sustainable?</span>
+              <span class="home-faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="home-faq-answer" aria-hidden="true">
+              <p>Absolutely! We are committed to sustainable construction practices:</p>
               <ul>
                 <li>Use of eco-friendly building materials</li>
                 <li>Energy-efficient design principles</li>
@@ -1892,19 +2000,15 @@
               <p>Our sustainable approach benefits both the environment and your long-term costs.</p>
             </div>
           </div>
-
-          <!-- FAQ 5 -->
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>What is your typical project timeline?</h3>
-              <div class="faq-toggle">
-                <i class="fas fa-plus"></i>
-              </div>
-            </div>
-            <div class="faq-answer">
-              <p>
-                Project timelines vary based on scope and complexity:
-              </p>
+          <!-- Home FAQ 5 -->
+          <div class="home-faq-item">
+            <button type="button" class="home-faq-question" aria-expanded="false" tabindex="0">
+              <span class="home-faq-q-icon"><i class="fas fa-question-circle"></i></span>
+              <span class="home-faq-q-text">What is your typical project timeline?</span>
+              <span class="home-faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="home-faq-answer" aria-hidden="true">
+              <p>Project timelines vary based on scope and complexity:</p>
               <ul>
                 <li><strong>Small residential projects:</strong> 3-6 months</li>
                 <li><strong>Medium commercial projects:</strong> 6-12 months</li>
@@ -1914,19 +2018,15 @@
               <p>We provide detailed timelines during the planning phase and keep you updated throughout the process.</p>
             </div>
           </div>
-
-          <!-- FAQ 6 -->
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3>Do you provide post-construction support?</h3>
-              <div class="faq-toggle">
-                <i class="fas fa-plus"></i>
-              </div>
-            </div>
-            <div class="faq-answer">
-              <p>
-                Yes, our commitment extends beyond project completion:
-              </p>
+          <!-- Home FAQ 6 -->
+          <div class="home-faq-item">
+            <button type="button" class="home-faq-question" aria-expanded="false" tabindex="0">
+              <span class="home-faq-q-icon"><i class="fas fa-question-circle"></i></span>
+              <span class="home-faq-q-text">Do you provide post-construction support?</span>
+              <span class="home-faq-toggle"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="home-faq-answer" aria-hidden="true">
+              <p>Yes, our commitment extends beyond project completion:</p>
               <ul>
                 <li>Comprehensive warranty coverage</li>
                 <li>Maintenance guidance and support</li>
@@ -2105,36 +2205,66 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCarousel();
   }
 
-  // FAQ Accordion
-  const faqItems = document.querySelectorAll('.faq-item');
-  
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-    const toggle = item.querySelector('.faq-toggle i');
-    
+  // Home FAQ Accordion (unique classes/ids)
+  const homeFaqItems = document.querySelectorAll('.home-faq-item');
+  homeFaqItems.forEach((item, idx) => {
+    const question = item.querySelector('.home-faq-question');
+    const answer = item.querySelector('.home-faq-answer');
+    const toggle = item.querySelector('.home-faq-toggle i');
     if (question && answer && toggle) {
+      // Set ARIA attributes and IDs
+      const qId = `home-faq${idx+1}-question`;
+      const aId = `home-faq${idx+1}-answer`;
+      question.setAttribute('id', qId);
+      question.setAttribute('aria-controls', aId);
+      answer.setAttribute('id', aId);
+      answer.setAttribute('aria-labelledby', qId);
+      // Click event
       question.addEventListener('click', () => {
         const isOpen = item.classList.contains('active');
-        
-        // Close all other FAQ items
-        faqItems.forEach(otherItem => {
+        // Close all others
+        homeFaqItems.forEach((otherItem, otherIdx) => {
           if (otherItem !== item) {
             otherItem.classList.remove('active');
-            const otherToggle = otherItem.querySelector('.faq-toggle i');
-            if (otherToggle) {
+            const otherQ = otherItem.querySelector('.home-faq-question');
+            const otherA = otherItem.querySelector('.home-faq-answer');
+            const otherToggle = otherItem.querySelector('.home-faq-toggle i');
+            if (otherQ && otherA && otherToggle) {
+              otherQ.setAttribute('aria-expanded', 'false');
+              otherA.setAttribute('aria-hidden', 'true');
               otherToggle.className = 'fas fa-plus';
             }
           }
         });
-        
-        // Toggle current item
+        // Toggle current
         if (isOpen) {
           item.classList.remove('active');
+          question.setAttribute('aria-expanded', 'false');
+          answer.setAttribute('aria-hidden', 'true');
           toggle.className = 'fas fa-plus';
         } else {
           item.classList.add('active');
+          question.setAttribute('aria-expanded', 'true');
+          answer.setAttribute('aria-hidden', 'false');
           toggle.className = 'fas fa-minus';
+        }
+      });
+      // Keyboard accessibility
+      question.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          question.click();
+        }
+        // Arrow navigation
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          const next = homeFaqItems[idx+1]?.querySelector('.home-faq-question');
+          if (next) next.focus();
+        }
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prev = homeFaqItems[idx-1]?.querySelector('.home-faq-question');
+          if (prev) prev.focus();
         }
       });
     }

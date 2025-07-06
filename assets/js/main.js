@@ -342,32 +342,39 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Contact Page FAQ Functionality
+// FAQ Section Functionality (Works on all pages with .faq-item)
+// FAQ Section Functionality (Home Page Only)
 document.addEventListener('DOMContentLoaded', function() {
+  // Only run this on home.html
+  if (!window.location.pathname.endsWith('home.html') && !window.location.pathname.endsWith('/')) return;
   const faqItems = document.querySelectorAll('.faq-item');
-  
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     const toggle = item.querySelector('.faq-toggle');
-    
+    if (!question) return;
     question.addEventListener('click', function() {
       const isActive = item.classList.contains('active');
-      
-      // Close all other FAQ items
-      faqItems.forEach(otherItem => {
+      // Close all other FAQ items in the same container
+      const parent = item.closest('.faq-grid, .faq-list, .faq-container, .faq-section');
+      const allItems = parent ? parent.querySelectorAll('.faq-item') : faqItems;
+      allItems.forEach(otherItem => {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
+          const otherToggle = otherItem.querySelector('.faq-toggle');
+          if (otherToggle) {
+            otherToggle.innerHTML = '<i class="fas fa-plus"></i>';
+          }
         }
       });
-      
       // Toggle current item
       item.classList.toggle('active');
-      
       // Update toggle icon
-      if (item.classList.contains('active')) {
-        toggle.innerHTML = '<i class="fas fa-minus"></i>';
-      } else {
-        toggle.innerHTML = '<i class="fas fa-plus"></i>';
+      if (toggle) {
+        if (item.classList.contains('active')) {
+          toggle.innerHTML = '<i class="fas fa-minus"></i>';
+        } else {
+          toggle.innerHTML = '<i class="fas fa-plus"></i>';
+        }
       }
     });
   });
